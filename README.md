@@ -5,7 +5,7 @@ of **short** and **ownership** data.
 ## Download
 To download the latest version from GitHub:
 ```bash
-$ git clone https://github.com/lit26/finvizfinance.git
+git clone https://github.com/MaxwellsPi/Fintel-Wrap
 ```
 
 ## API Authorization
@@ -26,19 +26,18 @@ set FINTEL-KEY YOUR_KEY
 ## Retrieve Data
 
 ### Get Shorts
-To retrieve shorts from the api, you can use the ```get_shorts()``` method:
+To retrieve shorts from the api, you can use the ```fintel.get_shorts()``` function:
 ```python
-import main
-
-df = main.get_shorts(['AMZN', 'NVDA'])
+import fintel as ft
+df = fintel.get_shorts(['AMZN', 'NVDA'])
 ```
 
 <img title="a title" alt="Alt text" src="https://cdsdashboards.readthedocs.io/en/stable/_images/1_Original_Jupyter_Notebook.png" width="800">
 
 
 ### Get Ownership
+To retrieve ownership data from the api, you can use the ```fintel.get_ownership()``` function:
 ```python
-import main
-
-df = main.get_ownership(['AMZN', 'NVDA'])
+import fintel as ft
+df = fintel.get_ownership(['AMZN', 'NVDA'])
 ```
