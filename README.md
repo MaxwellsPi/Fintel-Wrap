@@ -26,18 +26,18 @@ set FINTEL-KEY YOUR_KEY
 ## Retrieve Data
 
 ### Get Shorts
-To retrieve shorts from the api, you can use the ```fintel.get_shorts()``` function:
+To retrieve shorts from the api, you can use the ```fintel.data.get_shorts()``` function:
 ```python
-import fintel as ft
-df = ft.data.get_shorts(['AMZN', 'NVDA'])
+from fintel import data
+df = data.get_shorts(['tsla', 'aapl'])
 ```
-
-<img title="a title" alt="Alt text" src="https://cdsdashboards.readthedocs.io/en/stable/_images/1_Original_Jupyter_Notebook.png" width="800">
-
 
 ### Get Ownership
-To retrieve ownership data from the api, you can use the ```fintel.get_ownership()``` function:
+To retrieve ownership data from the api, you can use the ```fintel.data.get_ownership()``` function:
 ```python
-import fintel as ft
-df = ft.data.get_ownership(['AMZN', 'NVDA'])
+from fintel import data
+df = data.get_ownership(['tsla', 'aapl'])
 ```
+
+# Example
+<img title="a title" alt="Alt text" src="C:\Users\Edgar\Desktop\shorts-example.png" width="2048">
