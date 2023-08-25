@@ -57,11 +57,11 @@ def get_shorts(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
             df = pd.DataFrame(response.json()['data'])
             df = clean_df(df, sym)
             short_data = pd.concat([short_data, df], axis=0).reset_index(drop=True)
-            return short_data
         elif response.status_code == 404:
             print(f'{sym} not found.')
         else:
             print(f'No data found for {sym}.')
+    return short_data
 
 
 def get_ownership(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
@@ -89,11 +89,11 @@ def get_ownership(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
             df = pd.DataFrame(response.json()['owners'])
             df = clean_ownership_data(df, sym)
             ownership_data = pd.concat([ownership_data, df], axis=0).reset_index(drop=True)
-            return ownership_data
         elif response.status_code == 404:
             print(f'{sym} not found.')
         else:
             print(f'No data found for {sym}.')
+    return ownership_data
 
 
 def get_all_data(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
