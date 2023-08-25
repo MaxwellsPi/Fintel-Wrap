@@ -34,10 +34,11 @@ def get_shorts(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
 
     def clean_df(df: pd.DataFrame, ticker: str) -> pd.DataFrame:
         """
+        This add a ticker column and modifies the column order.
 
-        :param df:
-        :param ticker:
-        :return:
+        :param df: Dataframe containing raw data
+        :param ticker: Ticker associated to the raw data
+        :return: Clean dataframe
         """
 
         df['Ticker'] = ticker
@@ -73,6 +74,13 @@ def get_ownership(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
     """
 
     def clean_ownership_data(df: pd.DataFrame, tickers: str) -> pd.DataFrame:
+        """"
+        This add a ticker column and modifies the column order.
+
+        :param df: Dataframe containing raw data
+        :param tickers: Ticker associated to the raw data
+        :return: Clean dataframe
+        """
         df.insert(0, 'ticker', tickers)
         df.rename(columns={'name': 'owner_name'}, inplace=True)
         return df
