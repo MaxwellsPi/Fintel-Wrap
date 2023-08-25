@@ -73,15 +73,15 @@ def get_ownership(syms: list = ['tsla', 'aapl']) -> pd.DataFrame:
     :return: dataframe with ownership data for list of symbols
     """
 
-    def clean_ownership_data(df: pd.DataFrame, tickers: str) -> pd.DataFrame:
+    def clean_ownership_data(df: pd.DataFrame, ticker: str) -> pd.DataFrame:
         """"
         This add a ticker column and modifies the column order.
 
         :param df: Dataframe containing raw data
-        :param tickers: Ticker associated to the raw data
+        :param ticker: Ticker associated to the raw data
         :return: Clean dataframe
         """
-        df.insert(0, 'ticker', tickers)
+        df.insert(0, 'ticker', ticker)
         df.rename(columns={'name': 'owner_name'}, inplace=True)
         return df
 
